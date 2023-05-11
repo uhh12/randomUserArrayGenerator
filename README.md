@@ -1,2 +1,1 @@
 # randomUserArrayGenerator
-"npm i fs"
