@@ -1,0 +1,2 @@
+# randomUserArrayGenerator
+"npm i fs"
