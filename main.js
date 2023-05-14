@@ -1,8 +1,6 @@
 import names from "./names.js";
 import lastnames from "./lastnames.js";
 import fs from "fs";
-import { timeLog } from "console";
-import { Interface } from "readline";
 
 let randomusers = ``;
 
@@ -22,11 +20,16 @@ const randomPhone = () => {
 
 const generate = () => {
   for (let i = 0; i < 100; i++) {
+    var name = randomName();
+    var nameMail =
+      name.length > 6
+        ? `${name.slice(0, 7)}${Math.round(Math.random() * 100)}`
+        : `${name}${Math.round(Math.random() * 100)}`;
     randomusers += `\n{
-    name: "${randomName()}",
+    name: "${name}",
     lastname: "${randomLastname()}",
     phone: "${randomPhone()}",
-    email: "${randomEmail()}"
+    email: "${nameMail}@gmail.com"
   },`;
   }
   return randomusers;
